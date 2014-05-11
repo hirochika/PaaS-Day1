@@ -1,8 +1,8 @@
 ## Directory where the attributes of running instances is saved
-INSTANCE_DIR="/home/ubuntu/instances"
+INSTANCE_DIR="/home/cloud/instances"
 
 ## HTTP Load Balancer
-HTTP_LB="mgmt@http-load-balancer"
+HTTP_LB="cloud@157.82.3.180"
 
 ## FQDN
 fqdn=`cat $INSTANCE_DIR/$REPOSITORY.fqdn`
@@ -41,8 +41,8 @@ do
 	done
 	ssh $HTTP_LB sudo /opt/nginx_autoconfig.sh $fqdn $arg
 	## Deploy
-	ssh ubuntu@$instance "./rdeploy.sh"
-	ssh -f -n ubuntu@$instance "./rinstance.sh" > /dev/null 2>&1
+	ssh cloud@$instance "./rdeploy.sh"
+	ssh -f -n cloud@$instance "./rinstance.sh" > /dev/null 2>&1
 done
 
 ## Extract instances

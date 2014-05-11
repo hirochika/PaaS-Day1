@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Working repository
-WORKING_REPOSITORY=/home/ubuntu/gitolite-admin
+WORKING_REPOSITORY=/home/cloud/gitolite-admin
 
 ## Arguments
 repository=$1
@@ -48,10 +48,10 @@ sudo sh -c "echo \"#!/bin/sh
 
 ## Username/Repository
 REPOSITORY=\\\"$username/$repository\\\"
-\" > /home/git/repositories/$username/$repository.git/hooks/post-update"
-sudo sh -c "cat ~/rails_git_post_update_hook.sh >> /home/git/repositories/$username/$repository.git/hooks/post-update"
-sudo chown git /home/git/repositories/$username/$repository.git/hooks/post-update
-sudo chmod +x /home/git/repositories/$username/$repository.git/hooks/post-update
+\" > /var/lib/gitolite/repositories/$username/$repository.git/hooks/post-update"
+sudo sh -c "cat ~/rails_git_post_update_hook.sh >> /var/lib/gitolite/repositories/$username/$repository.git/hooks/post-update"
+sudo chown git /var/lib/gitolite/repositories/$username/$repository.git/hooks/post-update
+sudo chmod +x /var/lib/gitolite/repositories/$username/$repository.git/hooks/post-update
 
 ## Unlock
 rm -f /tmp/create_repository.lock
