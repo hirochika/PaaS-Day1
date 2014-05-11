@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Working repository
-WORKING_REPOSITORY=/home/ubuntu/gitolite-admin
+WORKING_REPOSITORY=/home/cloud/gitolite-admin
 
 ## Arguments
 repository=$1
