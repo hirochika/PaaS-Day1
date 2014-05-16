@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Working repository
-WORKING_REPOSITORY=/home/cloud/gitolite-admin
+WORKING_REPOSITORY=/home/ubuntu/gitolite-admin
 
 ## Arguments
 username=$1
@@ -36,7 +36,6 @@ then
 	echo "Error: User already exists."
 	exit 1
 fi
-echo "$ssh_pub_key"
 echo "$ssh_pub_key" > keydir/$username.pub
 git add keydir/$username.pub
 git commit -m "Add $username."
