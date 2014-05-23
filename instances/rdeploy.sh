@@ -11,8 +11,8 @@ export MYAPP_DATABASE_PASSWORD="<password>"
 
 ## The following variables may be moved to arguments of this script.
 REPOS_SERVER="your-repository-server"
-REPOS_USERNAME="username"
-REPOS_APPNAME="yourapp"
+REPOS_USERNAME=${$1:-"username"}
+REPOS_APPNAME=${$2:-"yourapp"}
 
 ## Kill the running instance
 kill `cat ri.pid`

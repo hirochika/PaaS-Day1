@@ -41,8 +41,8 @@ do
 	done
 	ssh $HTTP_LB sudo /opt/nginx_autoconfig.sh $fqdn $arg
 	## Deploy
-	ssh ubuntu@$instance "./rdeploy.sh"
-	ssh -f -n ubuntu@$instance "./rinstance.sh" > /dev/null 2>&1
+	ssh ubuntu@$instance "./rdeploy.sh $USER $REPO"
+	ssh -f -n ubuntu@$instance "./rinstance.sh $REPO" > /dev/null 2>&1
 done
 
 ## Extract instances
