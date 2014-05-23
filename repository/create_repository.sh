@@ -47,6 +47,8 @@ git push
 sudo sh -c "echo \"#!/bin/sh
 
 ## Username/Repository
+USER=\\\"$username\\\"
+REPO=\\\"$repository\\\"
 REPOSITORY=\\\"$username/$repository\\\"
 \" > /home/git/repositories/$username/$repository.git/hooks/post-update"
 sudo sh -c "cat ~/rails_git_post_update_hook.sh >> /home/git/repositories/$username/$repository.git/hooks/post-update"
